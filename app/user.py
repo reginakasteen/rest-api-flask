@@ -32,8 +32,8 @@ def register():
     return jsonify(user_schema.dump(new_user)), 201  
 
 
-@bp.route("/login", methods=["POST"])
-def login():
+@bp.route("/login/", methods=["POST"])
+def login(): 
     json_data = request.json
     try:
         data = user_schema.load(json_data)
